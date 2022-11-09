@@ -7,7 +7,7 @@ const metricsObj: any = {}
 metrics.exists.map((metric) => {
   metricsObj[metric] = 0
 })
-export class commentReportCompiler {
+class commentReportCompiler {
   constructor(public report: any = {}) {
     this.report = {
       shorterthan15: 0,
@@ -47,7 +47,7 @@ export const readProp = (readFileLocation: string, fileslength: number) => {
     input: text,
   })
 
-  rl.on('line', (res) => {
+  rl.on('line', (res: string) => {
     searcher(res)
   })
 

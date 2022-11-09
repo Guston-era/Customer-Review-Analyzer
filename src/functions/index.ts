@@ -1,6 +1,11 @@
 import { metrics } from '../constants'
 import fs from 'fs'
 import readline from 'readline'
+interface IAccumulator {
+  report: {}
+}
+
+type IAccumulatorArray = IAccumulator[]
 
 //main compiler
 const metricsObj: any = {}
@@ -37,8 +42,21 @@ class commentReportCompiler {
   }
 }
 
+//function to sum properties of objects in array
+const totalsReducer = (arr: IAccumulatorArray) => {
+  const finalReport = arr.reduce((acc: any, curr: IAccumulator) => {
+    for (const [key, value] of Object.entries(curr.report)) {
+      acc[key] = parseInt(acc[key]) || 0
+      acc[key] += value
+    }
+
+    return acc
+  }, {})
+  return finalReport
+}
+
 //function that reads each file, line by line
-const accumulatorArray: {}[] = []
+const accumulatorArray: IAccumulatorArray = []
 export const readProp = (readFileLocation: string, fileslength: number) => {
   const compiler = new commentReportCompiler()
   const text = fs.createReadStream(readFileLocation)

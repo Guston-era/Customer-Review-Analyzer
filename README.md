@@ -56,7 +56,8 @@ npm run start:dev
 
 This should print the report to the console. The report is printed twice, the first one is a quick nerdy one, the second one is the descriptive part, but they are all the same.
 
-![image](https://user-images.githubusercontent.com/84548265/200873135-43ceb531-d2c9-4e3f-bbea-0f2d45062624.png)
+![image](https://user-images.githubusercontent.com/84548265/200873507-b89cb57e-b020-4b21-a343-63273ae17fce.png)
+
 
 
 

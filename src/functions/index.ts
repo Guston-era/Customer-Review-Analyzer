@@ -39,7 +39,7 @@ export class commentReportCompiler {
 
 //function that reads each file, line by line
 const accumulatorArray: {}[] = []
-const readProp = (readFileLocation: string, fileslength: number) => {
+export const readProp = (readFileLocation: string, fileslength: number) => {
   const compiler = new commentReportCompiler()
   const text = fs.createReadStream(readFileLocation)
 

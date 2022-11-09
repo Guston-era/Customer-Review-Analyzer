@@ -1,5 +1,6 @@
 import path from 'path'
 import fs from 'fs'
+import { readProp } from './functions'
 
 //create files array
 const docsFolder = path.join(__dirname, 'docs')

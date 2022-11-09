@@ -9,7 +9,7 @@ type IAccumulatorArray = IAccumulator[]
 
 //main compiler
 const metricsObj: any = {}
-metrics.exists.map((metric) => {
+metrics.exists.map((metric: string) => {
   metricsObj[metric] = 0
 })
 class commentReportCompiler {
@@ -57,7 +57,7 @@ const totalsReducer = (arr: IAccumulatorArray) => {
 
 //function that reads each file, line by line
 const accumulatorArray: IAccumulatorArray = []
-export const readProp = (readFileLocation: string, fileslength: number) => {
+export const readLines = (readFileLocation: string, fileslength: number) => {
   const compiler = new commentReportCompiler()
   const text = fs.createReadStream(readFileLocation)
 
@@ -72,10 +72,11 @@ export const readProp = (readFileLocation: string, fileslength: number) => {
   rl.on('close', function () {
     accumulatorArray.push(compiler)
     if (accumulatorArray.length == fileslength) {
-      console.log(accumulatorArray)
+      console.log(totalsReducer(accumulatorArray))
     }
   })
 
+  //helper function to search through
   function searcher(sentence: string) {
     sentence = sentence.toLowerCase()
 

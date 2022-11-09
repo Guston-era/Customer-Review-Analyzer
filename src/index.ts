@@ -1,13 +1,13 @@
 import path from 'path'
 import fs from 'fs'
-import { readProp } from './functions'
+import { readLines } from './functions'
 
 //create files array
 const docsFolder = path.join(__dirname, 'docs')
 const filesToBeProcessed: string[] = []
 
 //synchronoous blocking operation to aggregate file names into one array first
-fs.readdirSync(docsFolder).forEach((file) => {
+fs.readdirSync(docsFolder).forEach((file: string) => {
   filesToBeProcessed.push(path.join(__dirname, 'docs', file))
 })
 
@@ -18,7 +18,7 @@ readFiles(filesToBeProcessed)
 async function readFiles(files: string[]) {
   await Promise.allSettled(
     files.map((file: string) => {
-      readProp(file, files.length)
+      readLines(file, files.length)
     }),
   )
 }

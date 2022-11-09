@@ -74,7 +74,13 @@ export const readLines = (readFileLocation: string, fileslength: number) => {
     if (accumulatorArray.length == fileslength) {
       //it's on the last item of the array
 
-      // console.log(totalsReducer(accumulatorArray)) //for a quick nerdy output
+      console.log(totalsReducer(accumulatorArray)) //for a quick nerdy output
+
+      console.log(
+        '\n',
+        'for a customized output:(need to edit the code incase you add more metrics)',
+        '\n',
+      )
 
       //   for a more detailed novice output:
       const finalReport: {

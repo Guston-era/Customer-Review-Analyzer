@@ -59,6 +59,10 @@ This should print the report to the console. The report is printed twice, the fi
 ![image](https://user-images.githubusercontent.com/84548265/200873507-b89cb57e-b020-4b21-a343-63273ae17fce.png)
 
 
+## Adding metrics
+Go to the/src/constants/index.ts and add a string to the array, for the metric you want
+![image](https://user-images.githubusercontent.com/84548265/200874327-f3f14c7e-01c5-4816-82d5-4ca949cb3b7e.png)
+
 
 
 ## Running in prod env

@@ -56,6 +56,10 @@ npm run start:dev
 
 This should print the report to the console. The report is printed twice, the first one is a quick nerdy one, the second one is the descriptive part, but they are all the same.
 
+![image](https://user-images.githubusercontent.com/84548265/200873135-43ceb531-d2c9-4e3f-bbea-0f2d45062624.png)
+
+
+
 ## Running in prod env
 
 To run the program to prod, run this command in your cli
@@ -78,4 +82,4 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-Ikhoka⭐️
+Ikhokha⭐️

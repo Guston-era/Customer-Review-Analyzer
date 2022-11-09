@@ -72,7 +72,30 @@ export const readLines = (readFileLocation: string, fileslength: number) => {
   rl.on('close', function () {
     accumulatorArray.push(compiler)
     if (accumulatorArray.length == fileslength) {
-      console.log(totalsReducer(accumulatorArray))
+      //it's on the last item of the array
+
+      // console.log(totalsReducer(accumulatorArray)) //for a quick nerdy output
+
+      //   for a more detailed novice output:
+      const finalReport: {
+        shorterthan15: number
+        shaker: number
+        mover: number
+        isURL: number
+        ['?']: number
+      } = totalsReducer(accumulatorArray)
+
+      console.log(
+        'comments shorter than 15 :=> ' + finalReport.shorterthan15,
+        '\n',
+        'comments that contains shaker :=> ' + finalReport.shaker,
+        '\n',
+        'comments that contains mover :=> ' + finalReport.mover,
+        '\n',
+        'comments that contains a url :=> ' + finalReport.isURL,
+        '\n',
+        'comments that contains questions :=> ' + finalReport['?'],
+      )
     }
   })
 

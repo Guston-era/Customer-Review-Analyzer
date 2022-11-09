@@ -8,7 +8,7 @@ function commentReportCompiler(this: any) {
   this.report = {
     shorterthan15: 0,
     isURL: 0,
-    // ...metricsObj,
+    ...metricsObj,
   }
 }
 

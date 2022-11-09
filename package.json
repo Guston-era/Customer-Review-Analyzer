@@ -1,0 +1,22 @@
+{
+  "name": "customer_review_analyzer",
+  "version": "1.0.0",
+  "description": "analysing customer reviews against given metrics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guston-era/Customer-Review-Analyzer.git"
+  },
+  "author": "Gustone Alwanga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Guston-era/Customer-Review-Analyzer/issues"
+  },
+  "homepage": "https://github.com/Guston-era/Customer-Review-Analyzer#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

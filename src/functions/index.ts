@@ -92,7 +92,7 @@ export const readLines = (readFileLocation: string, fileslength: number) => {
       } = totalsReducer(accumulatorArray)
 
       console.log(
-        'comments shorter than 15 :=> ' + finalReport.shorterthan15,
+        'comments shorter than 15 chars :=> ' + finalReport.shorterthan15,
         '\n',
         'comments that contains shaker :=> ' + finalReport.shaker,
         '\n',

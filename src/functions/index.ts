@@ -1,6 +1,9 @@
 import { metrics } from '../constants'
+import fs from 'fs'
+import readline from 'readline'
 
-function commentReportCompiler(this: any) {
+//main compiler
+export function commentReportCompiler(this: any) {
   const metricsObj: any = {}
   metrics.exists.map((metric) => {
     metricsObj[metric] = 0
@@ -32,4 +35,41 @@ commentReportCompiler.prototype = {
       this.report.isURL++
     }
   },
+}
+
+//function that reads each file, line by line
+const accumulatorArray: {}[] = []
+const readProp = (readFileLocation: string, fileslength: number) => {
+  const compiler = new commentReportCompiler()
+  const text = fs.createReadStream(readFileLocation)
+
+  const rl = readline.createInterface({
+    input: text,
+  })
+
+  rl.on('line', (res) => {
+    searcher(res)
+  })
+
+  rl.on('close', function () {
+    accumulatorArray.push(compiler)
+    if (accumulatorArray.length == fileslength) {
+      console.log(accumulatorArray)
+    }
+  })
+
+  function searcher(sentence: string) {
+    sentence = sentence.toLowerCase()
+
+    //check the length if shorter than 15
+    compiler.checkIfShorterThan15(sentence)
+
+    //check for exists
+    metrics.exists.map((met: string) => {
+      compiler.checkIfExists(sentence, met.toLowerCase())
+    })
+
+    //check if url
+    compiler.checkIfUrl(sentence)
+  }
 }
